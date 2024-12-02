@@ -31,7 +31,7 @@ def grab_red_packet(token):
     "Connection": "keep-alive",
     "Content-Length": "3774",
     "Accept": "application/json, text/plain, */*",
-    "mtgsig": '{"a1":"1.1","a2":1731292525105,"a3":"89138114w5835y05yu63wx89wuv9057w806951z9wv4979581236z2yw","a5":"xyZwkFw5yqP0UAfLnjHKRO8YVhAJCRJAIc==","a6":"h1.5HRU1oqS5D37XBQVIU//w7cWodbE5xVYKYCWrCnviHzEO9agDQSDIxEKRf0JSxkcslCTYphlWUBvLz+lKYIFYIIoEk97z5mda2f6o/Q7ODR92bndlhJ4VP+OMydprLklEbwm4AuziiwPGaW8nqzyJ52YUF0tRWgeKnvvhfE/EZOsz2UiXXDPFrVHwiNgyK9RMJaVlQfQGyKrDWJVOw5rLN6ceqDBRsHQ/xVvblZEDMCJG7bMxiv40nSYm+vDFdf8zoVG42Dv6F1K7PzXQwf7XtjfrN6qrB8jl+Bp4hP7++gNJmOZIdFg4ZlhT5etaL5OkDdHZRFkTPCugtDmA1XX7BCcvyN5/IsBWP8+HqDeQZOy1l5RMV5S5M4ssK541N3u7","x0":4,"d1":"d55e010f1365b83549a3830dc63bb920"}',
+    "mtgsig": '{"a1":"1.1","a2":1731292525105,"a3":"89138114w5835y05yu63wx89wuv9057w806951z9wv4979581236z2yw","a5":"xyZwkFw5yqP0UAfLnjHKRO8YVhAJCRJAIc==","a6":"h1.5HRU1oqS5D37XBQVIU//w7cWodbE5xVYKYCWrCnviHzEO9agDQSDIxEKRf0JSxkcslCTYphlWUBvLz+lKYIFYIIoEk97z5mda2f6o/Q7ODR92bndlhJ4VP+OMydprLklEbwm4AuziiwPGaW8nqzyJ52YUF0tRWgeKnvvhfE/EZOsz2UiXXDPFrVHwiNgyK9RMJaVlQfQGyKrDWJVOw5rLN6ceqDBRsHQ/xVvblZEDMCJG7bMxiv40nSYm+vDFdf8zoVG42Dv6F1K7PzXQwf7XtjfrN6qrB8jl+Bp4hP7++gNJmOZIdFg4ZlhT5etaL5OkDdHZRFkTPCugtDmA1XX7BCcvyN5/IsBWP8+HqDeQZOy1l5RMV5S5M4ssK541N3u7","x0":4,"d1":"d55e010f1365b83549a3830dc63bb920"}'，
     "User-Agent": "Mozilla/5.0 (Linux; Android 14; MAG-AN00 Build/HONORMAG-AN00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/96.0.4664.104 Mobile Safari/537.36",
     "Content-Type": "application/json;charset=UTF-8",
     "Origin": "https://market.waimai.meituan.com",
@@ -74,7 +74,8 @@ def grab_red_packet(token):
     else:
         print("请求失败:", response.status_code, response.text)
 
-def main():
+
+if __name__ == "__main__":
     z = 1
     for ck in meituanCookie:
         try:
@@ -86,10 +87,3 @@ def main():
                 print('-------------')
             except Exception as e:
                 print('错误')
-
-
-if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print('未知错误')

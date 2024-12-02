@@ -87,3 +87,5 @@ if __name__ == "__main__":
                 print('-------------')
             except Exception as e:
                 print('错误')
+        except Exception as e:
+                print('错误')

@@ -54,7 +54,7 @@ def grab_red_packet(token):
     m = requests.get('https://mtck.iw.mk/get_cookies').json() #获取最新ck提升稳定性
     m['latlng'] = "%s,1731292506722" % meituanjingweidu,int(round(time.time() * 1000))
     m['_lxsdk'] = m['_lxsdk_cuid']
-#    m['userId'] = meituanuserId
+    m['userId'] = meituanuserId
     m['token'] = token
     # 将 Cookies 转换为字符串
     cookie_str = "; ".join([f"{key}={value}" for key, value in m.items()])
@@ -83,7 +83,7 @@ if __name__ == "__main__":
             print('----------------------')
             try:
                 print('-----外卖-----')
-                grab_red_packet(meituanCookie)
+                grab_red_packet(ck)
                 print('-------------')
             except Exception as e:
                 print('错误')

@@ -58,7 +58,7 @@ def grab_red_packet(token):
     data["actualLongitude"] = jingdu
     data["actualLatitude"] = weidu
     m = requests.get('https://mtck.iw.mk/get_cookies').json() #获取最新ck提升稳定性
-    m['latlng'] = "%s,%s" % meituanjingweidu,int(round(time.time() * 1000))
+    m['latlng'] = "%s,%d" % (meituanjingweidu,int(round(time.time() * 1000)))
     m['_lxsdk'] = m['_lxsdk_cuid']
     m['userId'] = meituanuserId
     m['token'] = token

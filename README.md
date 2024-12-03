@@ -2,6 +2,11 @@
 青龙自用库
 
 ---
+如果有更好的薅羊毛项目可以Issues提交GitHub项目地址和文件名我会添加到本库，我会弄一个自动更新上去同步其他库项目
+---
+
+
+---
 可以Issues提交需要薅羊毛的应用-加上能薅到什么羊毛（在我需要的情况下，有能力一定写出来）
 ---
 
@@ -12,6 +17,8 @@ https://linhua.lanzoup.com/iCOcD0yqavmj
 
 - [x] 目前有
 
+  - [x] tsthb：塔斯汀汉堡签到积分可以兑换优惠券---测试中
+  - [x] T3cx：T3出行签到-领优惠券，积分可以兑换10元无门槛优惠券
   - [x] bwcj：霸王茶姬签到领积分[大佬的库](https://raw.githubusercontent.com/checkToke/yangtai/master/bwcj.js)
   - [x] sfsyV2: 顺丰快递领优惠券做积分任务[大佬的库](https://raw.githubusercontent.com/leafTheFish/DeathNote/main/sfsyV2.js)
   - [x] 星愿森林: 得物（星愿森林）变量后三个可以随便填，最好按要求吧[大佬的库](https://raw.githubusercontent.com/q7q7q7q7q7q7q7/ziyou/main/得物森林.py)

@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 """
-美团 外卖红包 更新时间20241203152930
+美团 外卖红包 更新时间202412032013
 自行捉包把meituan.com里面的token(一般在请求头里)填到变量 meituanCookie 中,
 多账号换行或&隔开
 export meituanCookie="AgGZIgsYHyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -65,8 +65,8 @@ def grab_red_packet(token):
 #    print(json.dumps(mtgsig))
 
     # 发送请求
-    url = "https://mediacps.meituan.com/gundam/gundamGrabV4?gdBs=&pageVersion=%s&yodaReady=h5&csecplatform=4&csecversion=2.4.0" % ("1733134808097") # 解决403错误
-    print(url)
+    url = "https://mediacps.meituan.com/gundam/gundamGrabV4?gdBs=&pageVersion=%s&yodaReady=h5&csecplatform=4&csecversion=2.4.0" % ("1733134808097") # 解决403错误，不确定什么时候失效，这个值不确定是否会变动
+    #print(url)
     response = requests.post(url, headers=headers, json=data)
     if response.status_code == 200:
         print("领取成功:")

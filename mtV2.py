@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 """
-美团 外卖红包 更新时间202412032013
+美团 外卖红包 更新时间202412032350
 自行捉包把meituan.com里面的token(一般在请求头里)填到变量 meituanCookie 中,
 多账号换行或&隔开
 export meituanCookie="AgGZIgsYHyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"

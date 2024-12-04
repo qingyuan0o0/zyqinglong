@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 """
-美团 外卖红包 更新时间202412041600
+美团 外卖红包 更新时间202412042230
 自行捉包把meituan.com里面的token(一般在请求头里)填到变量 meituanCookie 中,
 多账号换行或&隔开
 export meituanCookie="AgGZIgsYHyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -65,7 +65,7 @@ def grab_red_packet(token):
 #    print(json.dumps(mtgsig))
     # 发送请求
     newurl = requests.get('https://mtck.iw.mk/get_post_url').json() 
-    url = newurl["posturl"]
+    url = newurl["url"]
     #print(url)
     response = requests.post(url, headers=headers, json=data)
     if response.status_code == 200:

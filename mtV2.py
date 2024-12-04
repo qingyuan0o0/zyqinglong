@@ -58,16 +58,14 @@ def grab_red_packet(token):
     m['token'] = token
     mtgsig["a2"] = int(round(time.time() * 1000))
 
-    # 发送请求
-    #url = "https://mediacps.meituan.com/gundam/gundamGrabV4?gdBs=&pageVersion=%s&yodaReady=h5&csecplatform=4&csecversion=2.4.0" % ("1733134808097") # 解决403错误
-    url = m["posturl"]
-    if 'postmurl' in m:
-        del m["posturl"]
     # 将 Cookies 转换为字符串
     cookie_str = "; ".join([f"{key}={value}" for key, value in m.items()])
     headers["Cookie"] = cookie_str
     headers["mtgsig"] = json.dumps(mtgsig)
 #    print(json.dumps(mtgsig))
+    # 发送请求
+    newurl = requests.get('https://mtck.iw.mk/get_post_url').json() 
+    url = newurl["posturl"]
     #print(url)
     response = requests.post(url, headers=headers, json=data)
     if response.status_code == 200:

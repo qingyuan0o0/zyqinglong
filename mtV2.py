@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 """
-美团 外卖红包 更新时间202412032350
+美团 外卖红包 更新时间202412041600
 自行捉包把meituan.com里面的token(一般在请求头里)填到变量 meituanCookie 中,
 多账号换行或&隔开
 export meituanCookie="AgGZIgsYHyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -55,19 +55,20 @@ def grab_red_packet(token):
     m = requests.get('https://mtck.iw.mk/get_cookies').json() #获取最新ck提升稳定性
     m['latlng'] = "%s,%d" % (meituanjingweidu,int(round(time.time() * 1000)))
     m['_lxsdk'] = m['_lxsdk_cuid']
-#    m['userId'] = meituanuserId
     m['token'] = token
     mtgsig["a2"] = int(round(time.time() * 1000))
+
+    # 发送请求
+    #url = "https://mediacps.meituan.com/gundam/gundamGrabV4?gdBs=&pageVersion=%s&yodaReady=h5&csecplatform=4&csecversion=2.4.0" % ("1733134808097") # 解决403错误
+    url = m["posturl"]
+    if 'postmurl' in m:
+        del m["posturl"]
     # 将 Cookies 转换为字符串
     cookie_str = "; ".join([f"{key}={value}" for key, value in m.items()])
     headers["Cookie"] = cookie_str
     headers["mtgsig"] = json.dumps(mtgsig)
 #    print(json.dumps(mtgsig))
-
-    # 发送请求
-    newurl = requests.get('https://mtck.iw.mk/get_post_url').json()
-    url = newurl["url"]
-    #print(url) 获取最新的url避免失效
+    #print(url)
     response = requests.post(url, headers=headers, json=data)
     if response.status_code == 200:
         print("领取成功:")
